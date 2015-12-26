@@ -32,11 +32,6 @@ mean_std
 #Subset data for Only Mean and Standard Deviation Columns
 Final_data <- subset(Final_data,select = c(mean_std,562,563))
 
-##subdataFeaturesNames<-features$V2[grep("mean\\(\\)|std\\(\\)", features$V2)]
-##subdataFeaturesNames
-##selectedNames<-c(as.character(subdataFeaturesNames), "subject", "activity" )
-##Data<-subset(Data,select=selectedNames)
-
 #Step 3: Uses descriptive activity names to name the activities in the data set
 ##Assign Activity Labels to Y data set values
 activityLabels <- read.table("./GNCD/activity_labels.txt",header = FALSE)
@@ -62,9 +57,6 @@ library(plyr)
 avg_data <- aggregate(Final_data[,1:66],by=list(Final_data$Subject,Final_data$Activity),mean)
 names(avg_data)[1] <- c("Subject")
 names(avg_data)[2] <- c("Activity")
-
-##Data2<-aggregate(. ~Subject + Activity,Final_data, mean)
-##Data2<-Data2[order(Final_data$subject,Final_data$activity),]
 write.table(avg_data, file = "tidydata.txt",row.name=FALSE)
 
 
