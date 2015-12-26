@@ -14,6 +14,7 @@ For each record in the dataset it is provided:
 - An identifier of the subject who carried out the experiment.
 
 ### Section 1. Merge the training and the test sets to create one data set.
+
 #### 1. Read Following Data files in R
 - features.txt
 - activity_labels.txt
@@ -26,6 +27,7 @@ For each record in the dataset it is provided:
 
 #### 2. Merge the data sets seperately
 - Merge using rbind() x_train,y_train,subject_train with x_test,y_test,subject_test respectively.
+
 #### 3. Assign Proper Column Names and Final Merge
 - Use features.txt to extraxt the column names and assign proper column names to merged data sets.
 - Finally merge all three data sets using cbind().
@@ -40,7 +42,7 @@ For each record in the dataset it is provided:
 - Provide value in activity column based on label names provided in activity file
 
 ### Section 4. Appropriately label the data set with descriptive activity names.
-Use gsub function for pattern replacement to clean up the data labels.
+Use gsub() for pattern replacement to clean up the data labels.
 
 ### Section 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
 - Produce a data set with the average of each variable which are grouped by subject and activity using aggregate() in plyr package.
